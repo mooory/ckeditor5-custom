@@ -48,7 +48,7 @@
   "bugs": "https://github.com/ckeditor/ckeditor5-build-classic/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5-build-classic.git"
+    "url": "https://github.com/mooory/ckeditor5-custom.git"
   },
   "scripts": {
     "build": "npm run create-entry-file && npm run build-ckeditor",
