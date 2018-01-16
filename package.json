@@ -1,6 +1,6 @@
 {
-  "name": "@ckeditor/ckeditor5-build-classic",
-  "version": "1.0.0-alpha.2",
+  "name": "ckeditor5-custom",
+  "version": "0.0.4",
   "description": "CKEditor 5 classic editor build.",
   "keywords": [
     "ckeditor5",
@@ -15,6 +15,7 @@
   ],
   "devDependencies": {
     "@ckeditor/ckeditor5-adapter-ckfinder": "^1.0.0-alpha.2",
+    "@ckeditor/ckeditor5-alignment": "0.0.1",
     "@ckeditor/ckeditor5-autoformat": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-basic-styles": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-block-quote": "^1.0.0-alpha.2",
@@ -29,8 +30,12 @@
     "@ckeditor/ckeditor5-list": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-paragraph": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-theme-lark": "^1.0.0-alpha.2",
+    "@ckeditor/ckeditor5-ui": "^1.0.0-alpha.2",
     "@ckeditor/ckeditor5-upload": "^1.0.0-alpha.2",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "css-loader": "^0.28.8",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.8",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
@@ -54,6 +59,5 @@
     "build": "npm run create-entry-file && npm run build-ckeditor",
     "create-entry-file": "node bin/create-entry-file.js",
     "build-ckeditor": "webpack",
-    "preversion": "npm run build; if [ -n \"$(git status src/ckeditor.js build/ --porcelain)\" ]; then git add -u src/ckeditor.js build/ && git commit -m 'Internal: Build.'; fi"
-  }
+   }
 }

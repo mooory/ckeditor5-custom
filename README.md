@@ -22,7 +22,7 @@ See:
 First, install the build from npm:
 
 ```
-npm install --save @ckeditor/ckeditor5-build-classic
+npm install --save ckeditor5-custom
 ```
 
 And use it in your website:
@@ -31,7 +31,7 @@ And use it in your website:
 <div id="editor">
 	<p>This is the editor content.</p>
 </div>
-<script src="./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script src="./node_modules/ckeditor5-custom/build/ckeditor.js"></script>
 <script>
 	ClassicEditor
 		.create( document.querySelector( '#editor' ) )
@@ -47,10 +47,10 @@ And use it in your website:
 Or in your JavaScript application:
 
 ```js
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from 'ckeditor5-custom';
 
 // Or using CommonJS verion:
-// const ClassicEditor = require( '@ckeditor/ckeditor5-build-classic' );
+// const ClassicEditor = require( 'ckeditor5-custom' );
 
 ClassicEditor
 	.create( document.querySelector( '#editor' ) )
@@ -61,6 +61,52 @@ ClassicEditor
 		console.error( err.stack );
 	} );
 ```
+
+config like:
+
+const ck_config = {
+	toolbar: [ 'headings', 'bold', 'italic', 'underline', 'link', 'code', 'bulletedList', 'numberedList','blockQuote','insertImage', '|', 'alignLeft','alignCenter','alignRight', 'alignJustify','|','undo', 'redo'],
+    heading: {
+        options: [
+            { modelElement: 'paragraph', title: '段落', class: 'ck-heading_paragraph' },
+            { modelElement: 'heading1', viewElement: 'h2', title: '标题 1', class: 'ck-heading_heading1' },
+            { modelElement: 'heading2', viewElement: 'h3', title: '标题 2', class: 'ck-heading_heading2' },
+            { modelElement: 'heading3', viewElement: 'h4', title: '标题 3', class: 'ck-heading_heading3' }
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageTextAlternative',
+            '|',
+            'imageStyleFull',
+            'imageStyleAlignLeft',
+            'imageStyleAlignCenter',
+            'imageStyleAlignRight'
+        ],
+        styles: [
+            'imageStyleFull',
+            'imageStyleAlignLeft',
+            'imageStyleAlignCenter',
+            'imageStyleAlignRight'
+        ]
+    },
+    alignment: {
+        styles:['left','center','right', 'justify']
+    },
+    ckfinder: {
+        uploadUrl: 
+    }
+}
+
+then you can use config to create you own application:
+ClassicEditor
+	.create( document.querySelector( '#editor' ) , ck_config )
+	.then( editor => {
+		window.editor = editor;
+	} )
+	.catch( err => {
+		console.error( err.stack );
+	} );
 
 **Note:** If you are planning to integrate CKEditor 5 deep into your application, it is actually more convenient and recommended to install and import the source modules directly (like it happens in `ckeditor.js`). Read more in the [Advanced setup guide](https://ckeditor5.github.io/docs/nightly/ckeditor5/latest/builds/guides/integration/advanced-setup.html).
 

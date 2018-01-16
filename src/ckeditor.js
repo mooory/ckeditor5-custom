@@ -7,6 +7,7 @@ import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classicedi
 import EssentialsPlugin from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadadapterPlugin from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import AutoformatPlugin from '@ckeditor/ckeditor5-autoformat/src/autoformat';
+import AlignmentPlugin from '@ckeditor/ckeditor5-alignment/src/alignment';
 import BoldPlugin from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import UnderlinePlugin from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import ItalicPlugin from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -30,6 +31,7 @@ ClassicEditor.build = {
 		EssentialsPlugin,
 		UploadadapterPlugin,
 		AutoformatPlugin,
+		AlignmentPlugin,
 		BoldPlugin,
 		UnderlinePlugin,
 		ItalicPlugin,
